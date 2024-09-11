@@ -75,7 +75,7 @@ const CourseInformation: FC<Props> = ({
     <div className="w-[80%] m-auto mt-24">
       <form onSubmit={handleSubmit} className={`${styles.label}`}>
         <div>
-          <label htmlFor="">Course Name</label>
+          <label htmlFor="">Tên khóa học</label>
           <input
             type="name"
             name=""
@@ -85,20 +85,20 @@ const CourseInformation: FC<Props> = ({
               setCourseInfo({ ...courseInfo, name: e.target.value })
             }
             id="name"
-            placeholder="MERN stack LMS platform with next 13"
+            placeholder="name"
             className={`
             ${styles.input}`}
           />
         </div>
         <br />
         <div className="mb-5">
-          <label className={`${styles.label}`}>Course Description</label>
+          <label className={`${styles.label}`}>Mô tả khóa học</label>
           <textarea
             name=""
             id=""
             cols={30}
             rows={8}
-            placeholder="Write something amazing..."
+            placeholder="Viết điều gì đó tuyệt vời..."
             className={`${styles.input} !h-min !py-2`}
             value={courseInfo.description}
             onChange={(e: any) =>
@@ -109,7 +109,7 @@ const CourseInformation: FC<Props> = ({
         <br />
         <div className="w-full flex justify-between">
           <div className="w-[45%]">
-            <label className={`${styles.label}`}>Course Price</label>
+            <label className={`${styles.label}`}>Giá khóa học</label>
             <input
               type="number"
               name=""
@@ -146,7 +146,7 @@ const CourseInformation: FC<Props> = ({
         <div className="w-full flex justify-between">
           <div className="w-[45%]">
             <label className={`${styles.label}`} htmlFor="email">
-              Course Tags
+            Thẻ khóa học
             </label>
             <input
               type="text"
@@ -164,7 +164,7 @@ const CourseInformation: FC<Props> = ({
           </div>
           <div className="w-[50%]">
             <label className={`${styles.label} w-[50%]`}>
-              Course Categories
+             Danh mục khóa học
             </label>
             <select
               name=""
@@ -175,7 +175,7 @@ const CourseInformation: FC<Props> = ({
                 setCourseInfo({ ...courseInfo, categories: e.target.value })
               }
             >
-              <option value="">Select Category</option>
+              <option value="">Chọn danh mục</option>
               {categories &&
                 categories.map((item: any) => (
                   <option value={item.title} key={item._id}>
@@ -188,7 +188,7 @@ const CourseInformation: FC<Props> = ({
         <br />
         <div className="w-full flex justify-between">
           <div className="w-[45%]">
-            <label className={`${styles.label}`}>Course Level</label>
+            <label className={`${styles.label}`}>Cấp độ khóa học</label>
             <input
               type="text"
               name=""
@@ -198,7 +198,7 @@ const CourseInformation: FC<Props> = ({
                 setCourseInfo({ ...courseInfo, level: e.target.value })
               }
               id="level"
-              placeholder="Beginner/Intermediate/Expert"
+              placeholder="Sơ cấp/Trung cấp/Chuyên gia"
               className={`
             ${styles.input}`}
             />
@@ -246,7 +246,7 @@ const CourseInformation: FC<Props> = ({
               />
             ) : (
               <span className="text-black dark:text-white">
-                Drag and drop your thumbnail here or click to browse
+               Kéo và thả hình thu nhỏ của bạn vào đây hoặc nhấp để duyệt
               </span>
             )}
           </label>

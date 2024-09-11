@@ -17,7 +17,7 @@ const CreateCourse = (props: Props) => {
 
   useEffect(() => {
     if (isSuccess) {
-      toast.success("Course created successfully");
+      toast.success("Khóa học đã được tạo thành công");
       redirect("/admin/courses");
     }
     if (error) {
@@ -47,7 +47,7 @@ const CreateCourse = (props: Props) => {
       videoUrl: "",
       title: "",
       description: "",
-      videoSection: "Untitled Section",
+      videoSection: "Phần không có tiêu đề",
       videoLength: "",
       links: [
         {
@@ -64,16 +64,16 @@ const CreateCourse = (props: Props) => {
 
 
   const handleSubmit = async () => {
-    // Format benefits array
+
     const formattedBenefits = benefits.map((benefit) => ({
       title: benefit.title,
     }));
-    // Format prerequisites array
+  
     const formattedPrerequisites = prerequisites.map((prerequisite) => ({
       title: prerequisite.title,
     }));
 
-    // Format course content array
+
     const formattedCourseContentData = courseContentData.map(
       (courseContent) => ({
         videoUrl: courseContent.videoUrl,
@@ -89,7 +89,7 @@ const CreateCourse = (props: Props) => {
       })
     );
 
-    //   prepare our data object
+  
     const data = {
       name: courseInfo.name,
       description: courseInfo.description,

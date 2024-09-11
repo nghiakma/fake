@@ -88,7 +88,7 @@ const AllCourses = (props: Props) => {
     if (isSuccess) {
       setOpen(false);
       refetch();
-      toast.success("Course Deleted Successfully");
+      toast.success("Khóa học đã được xóa thành công");
     }
     if (error) {
       if ("data" in error) {
@@ -172,20 +172,20 @@ const AllCourses = (props: Props) => {
             >
               <Box className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[450px] bg-white dark:bg-slate-900 rounded-[8px] shadow p-4 outline-none">
                 <h1 className={`${styles.title}`}>
-                  Are you sure you want to delete this course?
+                  Bạn có chắc chắn muốn xóa khóa học này?
                 </h1>
                 <div className="flex w-full items-center justify-between mb-6 mt-4">
                   <div
                     className={`${styles.button} !w-[120px] h-[30px] bg-[#47d097]`}
                     onClick={() => setOpen(!open)}
                   >
-                    Cancel
+                    Hủy
                   </div>
                   <div
                     className={`${styles.button} !w-[120px] h-[30px] bg-[#d63f3f]`}
                     onClick={handleDelete}
                   >
-                    Delete
+                    Xóa
                   </div>
                 </div>
               </Box>

@@ -57,7 +57,7 @@ const CourseContent: FC<Props> = ({
       item.links[0].url === "" ||
       item.videoLength === ""
     ) {
-      toast.error("Please fill all the fields first!");
+      toast.error("Vui lòng điền vào tất cả các trường trước!");
     } else {
       let newVideoSection = "";
 
@@ -65,7 +65,7 @@ const CourseContent: FC<Props> = ({
         const lastVideoSection =
           courseContentData[courseContentData.length - 1].videoSection;
 
-        // use the last videoSection if available, else use user input
+        
         if (lastVideoSection) {
           newVideoSection = lastVideoSection;
         }
@@ -91,7 +91,7 @@ const CourseContent: FC<Props> = ({
       courseContentData[courseContentData.length - 1].links[0].title === "" ||
       courseContentData[courseContentData.length - 1].links[0].url === ""
     ) {
-      toast.error("Please fill all the fields first!");
+      toast.error("Vui lòng điền vào tất cả các trường trước!");
     } else {
       setActiveSection(activeSection + 1);
       const newContent = {
@@ -99,7 +99,7 @@ const CourseContent: FC<Props> = ({
         title: "",
         description: "",
         videoLength: "",
-        videoSection: `Untitled Section ${activeSection}`,
+        videoSection: `Phần không có tiêu đề ${activeSection}`,
         links: [{ title: "", url: "" }],
       };
       setCourseContentData([...courseContentData, newContent]);
@@ -118,7 +118,7 @@ const CourseContent: FC<Props> = ({
       courseContentData[courseContentData.length - 1].links[0].title === "" ||
       courseContentData[courseContentData.length - 1].links[0].url === ""
     ) {
-      toast.error("section can't be empty!");
+      toast.error("phần không được để trống!");
     } else {
       setActive(active + 1);
       handlleCourseSubmit();
@@ -179,7 +179,7 @@ const CourseContent: FC<Props> = ({
                     <div></div>
                   )}
 
-                  {/* // arrow button for collasped video content */}
+                
                   <div className="flex items-center">
                     <AiOutlineDelete
                       className={`dark:text-white text-[20px] mr-2 text-black ${
@@ -208,10 +208,10 @@ const CourseContent: FC<Props> = ({
                 {!isCollapsed[index] && (
                   <>
                     <div className="my-3">
-                      <label className={styles.label}>Video Title</label>
+                      <label className={styles.label}>Tiêu đề video</label>
                       <input
                         type="text"
-                        placeholder="Project Plan..."
+                        placeholder="kế hoạch dự án..."
                         className={`${styles.input}`}
                         value={item.title}
                         onChange={(e) => {
@@ -222,7 +222,7 @@ const CourseContent: FC<Props> = ({
                       />
                     </div>
                     <div className="mb-3">
-                      <label className={styles.label}>Video Url</label>
+                      <label className={styles.label}>Đường dẫn video</label>
                       <input
                         type="text"
                         placeholder="sdder"
@@ -236,7 +236,7 @@ const CourseContent: FC<Props> = ({
                       />
                     </div>
                     <div className="mb-3">
-                      <label className={styles.label}>Video Length (in minutes)</label>
+                      <label className={styles.label}>Độ dài video (phút)</label>
                       <input
                         type="number"
                         placeholder="20"
@@ -252,7 +252,7 @@ const CourseContent: FC<Props> = ({
                     
 
                     <div className="mb-3">
-                      <label className={styles.label}>Video Description</label>
+                      <label className={styles.label}>Mô tả video</label>
                       <textarea
                         rows={8}
                         cols={30}
@@ -288,7 +288,7 @@ const CourseContent: FC<Props> = ({
                         </div>
                         <input
                           type="text"
-                          placeholder="Source Code... (Link title)"
+                          placeholder="Mã nguồn... (Tiêu đề liên kết)"
                           className={`${styles.input}`}
                           value={link.title}
                           onChange={(e) => {
@@ -300,7 +300,7 @@ const CourseContent: FC<Props> = ({
                         />
                         <input
                           type="url"
-                          placeholder="Source Code Url... (Link URL)"
+                          placeholder="Đường dẫn mã nguồn... (đường dẫn liên kết)"
                           className={`${styles.input} mt-6`}
                           value={link.url}
                           onChange={(e) => {
@@ -319,7 +319,7 @@ const CourseContent: FC<Props> = ({
                         className="flex items-center text-[18px] dark:text-white text-black cursor-pointer"
                         onClick={() => handleAddLink(index)}
                       >
-                        <BsLink45Deg className="mr-2" /> Add Link
+                        <BsLink45Deg className="mr-2" /> Thêm liên kết
                       </p>
                     </div>
                   </>
@@ -332,7 +332,7 @@ const CourseContent: FC<Props> = ({
                       className="flex items-center text-[18px] dark:text-white text-black cursor-pointer"
                       onClick={(e: any) => newContentHandler(item)}
                     >
-                      <AiOutlinePlusCircle className="mr-2" /> Add New Content
+                      <AiOutlinePlusCircle className="mr-2" /> Thêm nội dung mới
                     </p>
                   </div>
                 )}
@@ -345,7 +345,7 @@ const CourseContent: FC<Props> = ({
           className="flex items-center text-[20px] dark:text-white text-black cursor-pointer"
           onClick={() => addNewSection()}
         >
-          <AiOutlinePlusCircle className="mr-2" /> Add new Section
+          <AiOutlinePlusCircle className="mr-2" /> Thêm phần mới
         </div>
       </form>
       <br />
@@ -354,13 +354,13 @@ const CourseContent: FC<Props> = ({
           className="w-full 800px:w-[180px] flex items-center justify-center h-[40px] bg-[#37a39a] text-center text-[#fff] rounded mt-8 cursor-pointer"
           onClick={() => prevButton()}
         >
-          Prev
+          Trước 
         </div>
         <div
           className="w-full 800px:w-[180px] flex items-center justify-center h-[40px] bg-[#37a39a] text-center text-[#fff] rounded mt-8 cursor-pointer"
           onClick={() => handleOptions()}
         >
-          Next
+          Sau
         </div>
       </div>
       <br />

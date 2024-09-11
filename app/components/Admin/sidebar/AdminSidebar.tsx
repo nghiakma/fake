@@ -128,7 +128,7 @@ const AdminSidebar = () => {
               >
                 <Link href="/" className="block">
                   <h3 className="text-[25px] font-Poppins uppercase dark:text-white text-black">
-                    ELearning
+                    LS
                   </h3>
                 </Link>
                 <IconButton
@@ -189,10 +189,10 @@ const AdminSidebar = () => {
               sx={{ m: "15px 0 5px 25px" }}
               className="!text-[18px] text-black dark:text-[#ffffffc1] capitalize !font-[400]"
             >
-              {!isCollapsed && "Data"}
+              {!isCollapsed && "Dữ liệu"}
             </Typography>
             <Item
-              title="Users"
+              title="Người dùng"
               to="/admin/users"
               icon={<GroupsIcon className="text-black dark:text-white" />}
               selected={selected}
@@ -200,7 +200,7 @@ const AdminSidebar = () => {
             />
 
             <Item
-              title="Invoices"
+              title="Hóa đơn"
               to="/admin/invoices"
               icon={
                 <ReceiptOutlinedIcon className="text-black dark:text-white" />
@@ -214,17 +214,17 @@ const AdminSidebar = () => {
               className="!text-[18px] text-black dark:text-[#ffffffc1] capitalize !font-[400]"
               sx={{ m: "15px 0 5px 20px" }}
             >
-              {!isCollapsed && "Content"}
+              {!isCollapsed && "Nội dung"}
             </Typography>
             <Item
-              title="Create Course"
+              title="Tạo khóa học"
               to="/admin/create-course"
               icon={<VideoCallIcon className="text-black dark:text-white" />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Live Courses"
+              title="Khóa học trực tuyến"
               to="/admin/courses"
               icon={
                 <OndemandVideoIcon className="text-black dark:text-white" />
@@ -238,24 +238,11 @@ const AdminSidebar = () => {
               className="!text-[18px] text-black dark:text-[#ffffffc1] capitalize !font-[400]"
               sx={{ m: "15px 0 5px 20px" }}
             >
-              {!isCollapsed && "Customization"}
+              {!isCollapsed && "Tùy chỉnh"}
             </Typography>
+           
             <Item
-              title="Hero"
-              to="/admin/hero"
-              icon={<WebIcon className="text-black dark:text-white" />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="FAQ"
-              to="/admin/faq"
-              icon={<QuizIcon className="text-black dark:text-white" />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Categories"
+              title="Danh mục"
               to="/admin/categories"
               icon={<WysiwygIcon className="text-black dark:text-white" />}
               selected={selected}
@@ -267,10 +254,10 @@ const AdminSidebar = () => {
               className="!text-[18px] text-black dark:text-[#ffffffc1] capitalize !font-[400]"
               sx={{ m: "15px 0 5px 20px" }}
             >
-              {!isCollapsed && "Controllers"}
+              {!isCollapsed && "Quản lý"}
             </Typography>
             <Item
-              title="Manage Team"
+              title="Quản lý đội"
               to="/admin/team"
               icon={
                 <PeopleOutlinedIcon className="text-black dark:text-white" />
@@ -284,10 +271,10 @@ const AdminSidebar = () => {
               className="!text-[18px] text-black dark:text-[#ffffffc1] capitalize !font-[400]"
               sx={{ m: "15px 0 5px 20px" }}
             >
-              {!isCollapsed && "Analytics"}
+              {!isCollapsed && "Phân tích"}
             </Typography>
             <Item
-              title="Courses Analytics"
+              title="Phân tích khóa học"
               to="/admin/courses-analytics"
               icon={
                 <BarChartOutlinedIcon className="text-black dark:text-white" />
@@ -296,7 +283,7 @@ const AdminSidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Orders Analytics"
+              title="Phân tích đơn hàng"
               to="/admin/orders-analytics"
               icon={<MapOutlinedIcon className="text-black dark:text-white" />}
               selected={selected}
@@ -304,7 +291,7 @@ const AdminSidebar = () => {
             />
 
             <Item
-              title="Users Analytics"
+              title="Phân tích người dùng"
               to="/admin/users-analytics"
               icon={
                 <ManageHistoryIcon className="text-black dark:text-white" />
@@ -318,11 +305,11 @@ const AdminSidebar = () => {
               className="!text-[18px] text-black dark:text-[#ffffffc1] capitalize !font-[400]"
               sx={{ m: "15px 0 5px 20px" }}
             >
-              {!isCollapsed && "Extras"}
+              {!isCollapsed && "Tùy Chọn"}
             </Typography>
             <div onClick={logoutHandler}>
               <Item
-                title="Logout"
+                title="Đăng xuất"
                 to="/"
                 icon={<ExitToAppIcon className="text-black dark:text-white" />}
                 selected={selected}

@@ -25,7 +25,7 @@ const EditCategories = (props: Props) => {
     }
     if (layoutSuccess) {
         refetch();
-      toast.success("Categories updated successfully");
+      toast.success("Danh mục đã cập nhật thành công");
     }
 
     if (error) {
@@ -44,7 +44,7 @@ const EditCategories = (props: Props) => {
 
   const newCategoriesHandler = () => {
     if (categories[categories.length - 1].title === "") {
-      toast.error("Category title cannot be empty");
+      toast.error("Tiêu đề danh mục không được để trống");
     } else {
       setCategories((prevCategory: any) => [...prevCategory, { title: "" }]);
     }
@@ -79,7 +79,7 @@ const EditCategories = (props: Props) => {
         <Loader />
       ) : (
         <div className="mt-[120px] text-center">
-          <h1 className={`${styles.title}`}>All Categories</h1>
+          <h1 className={`${styles.title}`}>Tất cả danh mục</h1>
           {categories &&
             categories.map((item: any, index: number) => {
               return (
@@ -91,7 +91,7 @@ const EditCategories = (props: Props) => {
                       onChange={(e) =>
                         handleCategoriesAdd(item._id, e.target.value)
                       }
-                      placeholder="Enter category title..."
+                      placeholder="Nhập tiêu đề danh mục..."
                     />
                     <AiOutlineDelete
                       className="dark:text-white text-black text-[18px] cursor-pointer"
@@ -131,7 +131,7 @@ const EditCategories = (props: Props) => {
                 : editCategoriesHandler
             }
           >
-            Save
+            Lưu
           </div>
         </div>
       )}

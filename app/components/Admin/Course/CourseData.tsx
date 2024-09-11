@@ -49,7 +49,7 @@ const CourseData: FC<Props> = ({
     if (benefits[benefits.length - 1]?.title !== "" && prerequisites[prerequisites.length - 1]?.title !== "") {
       setActive(active + 1);
     } else{
-        toast.error("Please fill the fields for go to next!")
+        toast.error("Vui lòng điền vào các trường để chuyển sang phần tiếp theo!")
     }
   };
   
@@ -58,7 +58,7 @@ const CourseData: FC<Props> = ({
     <div className="w-[80%] m-auto mt-24 block">
       <div>
         <label className={`${styles.label} text-[20px]`} htmlFor="email">
-          What are the benefits for students in this course?
+          Lợi ích của học viên khi tham gia khóa học này là gì?
         </label>
         <br />
         {benefits.map((benefit: any, index: number) => (
@@ -66,7 +66,7 @@ const CourseData: FC<Props> = ({
             type="text"
             key={index}
             name="Benefit"
-            placeholder="You will be able to build a full stack LMS Platform..."
+            placeholder="Bạn sẽ xây dựng một nền tảng đầy đủ"
             required
             className={`${styles.input} my-2`}
             value={benefit.title}
@@ -81,7 +81,7 @@ const CourseData: FC<Props> = ({
 
       <div>
         <label className={`${styles.label} text-[20px]`} htmlFor="email">
-        What are the prerequisites for starting this course?
+        Điều kiện tiên quyết để bắt đầu khóa học này là gì?
         </label>
         <br />
         {prerequisites.map((prerequisites: any, index: number) => (
@@ -89,7 +89,7 @@ const CourseData: FC<Props> = ({
             type="text"
             key={index}
             name="prerequisites"
-            placeholder="You need basic knowledge of MERN stack"
+            placeholder="Bạn cần có kiến ​​thức cơ bản về lập trình"
             required
             className={`${styles.input} my-2`}
             value={prerequisites.title}

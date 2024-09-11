@@ -106,7 +106,7 @@ const Login: FC<Props> = ({ setRoute, setOpen, refetch }) => {
         <br />
       </form>
       <br />
-      <h5>
+      {/* <h5>
           Lần đầu tiên đăng ký{" "}
         <span
           className="text-blue-500 cursor-pointer"
@@ -114,7 +114,7 @@ const Login: FC<Props> = ({ setRoute, setOpen, refetch }) => {
         >
           Nhấn vào đây
         </span>
-      </h5>
+      </h5> */}
     </div>
   );
 };
