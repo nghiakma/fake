@@ -135,7 +135,7 @@ const DashboardWidgets: FC<Props> = ({ open }) => {
                   {userComparePercentage?.currentMonth}
                 </h5>
                 <h5 className="py-2 font-Poppins dark:text-[#45CBA0] text-black text-[20px] font-[400]">
-                  Người dùng mới
+                  Người dùng 
                 </h5>
               </div>
               <div>

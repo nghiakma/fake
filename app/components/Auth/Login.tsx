@@ -52,7 +52,7 @@ const Login: FC<Props> = ({ setRoute, setOpen, refetch }) => {
       <h1 className={`${styles.title}`}>Đăng Nhập</h1>
       <form onSubmit={handleSubmit}>
         <label className={`${styles.label}`} htmlFor="email">
-          Nhập Email của bạn
+          Nhập Email
         </label>
         <input
           type="email"
@@ -70,7 +70,7 @@ const Login: FC<Props> = ({ setRoute, setOpen, refetch }) => {
         )}
         <div className="w-full mt-5 relative mb-1">
           <label className={`${styles.label}`} htmlFor="email">
-            Nhập password của bạn
+            Nhập password
           </label>
           <input
             type={!show ? "password" : "text"}

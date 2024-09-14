@@ -1,6 +1,6 @@
 import { styles } from "@/app/styles/style";
 import React, { FC } from "react";
-import {AiOutlinePlusCircle} from "react-icons/ai";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 import { toast } from "react-hot-toast";
 
 type Props = {
@@ -21,9 +21,11 @@ const CourseData: FC<Props> = ({
   setActive,
 }) => {
 
-  const handleBenefitChange = (index: number, value: any) => {
-    const updatedBenefits = [...benefits];
-    updatedBenefits[index].title = value;
+  const handleBenefitChange = (index: number, value: string) => {
+    // Sao chép sâu đối tượng để không thay đổi đối tượng gốc
+    const updatedBenefits = benefits.map((benefit, i) =>
+      i === index ? { ...benefit, title: value } : benefit
+    );
     setBenefits(updatedBenefits);
   };
 
@@ -31,9 +33,11 @@ const CourseData: FC<Props> = ({
     setBenefits([...benefits, { title: "" }]);
   };
 
-  const handlePrerequisitesChange = (index: number, value: any) => {
-    const updatedPrerequisites = [...prerequisites];
-    updatedPrerequisites[index].title = value;
+  const handlePrerequisitesChange = (index: number, value: string) => {
+    // Sao chép sâu đối tượng để không thay đổi đối tượng gốc
+    const updatedPrerequisites = prerequisites.map((prerequisite, i) =>
+      i === index ? { ...prerequisite, title: value } : prerequisite
+    );
     setPrerequisites(updatedPrerequisites);
   };
 
@@ -43,16 +47,15 @@ const CourseData: FC<Props> = ({
 
   const prevButton = () => {
     setActive(active - 1);
-  }
+  };
 
   const handleOptions = () => {
     if (benefits[benefits.length - 1]?.title !== "" && prerequisites[prerequisites.length - 1]?.title !== "") {
       setActive(active + 1);
-    } else{
-        toast.error("Vui lòng điền vào các trường để chuyển sang phần tiếp theo!")
+    } else {
+      toast.error("Vui lòng điền vào các trường để chuyển sang phần tiếp theo!");
     }
   };
-  
 
   return (
     <div className="w-[80%] m-auto mt-24 block">
@@ -61,7 +64,7 @@ const CourseData: FC<Props> = ({
           Lợi ích của học viên khi tham gia khóa học này là gì?
         </label>
         <br />
-        {benefits.map((benefit: any, index: number) => (
+        {benefits.map((benefit, index) => (
           <input
             type="text"
             key={index}
@@ -81,10 +84,10 @@ const CourseData: FC<Props> = ({
 
       <div>
         <label className={`${styles.label} text-[20px]`} htmlFor="email">
-        Điều kiện tiên quyết để bắt đầu khóa học này là gì?
+          Điều kiện tiên quyết để bắt đầu khóa học này là gì?
         </label>
         <br />
-        {prerequisites.map((prerequisites: any, index: number) => (
+        {prerequisites.map((prerequisite, index) => (
           <input
             type="text"
             key={index}
@@ -92,18 +95,17 @@ const CourseData: FC<Props> = ({
             placeholder="Bạn cần có kiến ​​thức cơ bản về lập trình"
             required
             className={`${styles.input} my-2`}
-            value={prerequisites.title}
+            value={prerequisite.title}
             onChange={(e) => handlePrerequisitesChange(index, e.target.value)}
           />
         ))}
         <AiOutlinePlusCircle
           style={{ margin: "10px 0px", cursor: "pointer", width: "30px" }}
-
           onClick={handleAddPrerequisites}
         />
       </div>
       <div className="w-full flex items-center justify-between">
-      <div
+        <div
           className="w-full 800px:w-[180px] flex items-center justify-center h-[40px] bg-[#37a39a] text-center text-[#fff] rounded mt-8 cursor-pointer"
           onClick={() => prevButton()}
         >

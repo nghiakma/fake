@@ -224,7 +224,7 @@ const AdminSidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Khóa học trực tuyến"
+              title="Khóa học"
               to="/admin/courses"
               icon={
                 <OndemandVideoIcon className="text-black dark:text-white" />
@@ -274,7 +274,7 @@ const AdminSidebar = () => {
               {!isCollapsed && "Phân tích"}
             </Typography>
             <Item
-              title="Phân tích khóa học"
+              title="Khóa học"
               to="/admin/courses-analytics"
               icon={
                 <BarChartOutlinedIcon className="text-black dark:text-white" />
@@ -283,7 +283,7 @@ const AdminSidebar = () => {
               setSelected={setSelected}
             />
             <Item
-              title="Phân tích đơn hàng"
+              title="Đơn hàng"
               to="/admin/orders-analytics"
               icon={<MapOutlinedIcon className="text-black dark:text-white" />}
               selected={selected}
@@ -291,7 +291,7 @@ const AdminSidebar = () => {
             />
 
             <Item
-              title="Phân tích người dùng"
+              title="Người dùng"
               to="/admin/users-analytics"
               icon={
                 <ManageHistoryIcon className="text-black dark:text-white" />

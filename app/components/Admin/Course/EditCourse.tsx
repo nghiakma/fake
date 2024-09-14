@@ -27,7 +27,7 @@ const EditCourse: FC<Props> = ({ id }) => {
 
   useEffect(() => {
     if (isSuccess) {
-      toast.success("Course Updated successfully");
+      toast.success("Khóa học đã được cập nhật thành công");
       redirect("/admin/courses");
     }
     if (error) {
